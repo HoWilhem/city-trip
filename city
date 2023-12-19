@@ -1,0 +1,86 @@
+import folium
+
+# Coordonnées de Paris
+paris_coords = (48.8566, 2.3522)
+
+# Création de la carte centrée sur Paris
+m = folium.Map(location=paris_coords, zoom_start=13)
+
+
+def tourEiffel():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/tourEiffel.png', icon_size=(40, 50), icon_anchor=(15, 35))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/tourEiffel.jpg' alt='Tour Eiffel' width='200'>
+        <p>
+            Ah, la Tour Eiffel, le grand géant de fer qui a commencé comme un projet fou d'exposition universelle !
+            Imaginez un architecte, Gustave Eiffel, en train de dire : "Hé les gars, construisons une immense structure en fer à Paris, ça va être génial !"
+            Tout le monde a dû penser qu'il avait un boulon en moins, mais regardez-la maintenant : la star de Paris, le selfie ultime et le lieu où les pigeons ont des vues incroyables !
+        </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="son.mp3"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.8584, 2.2945],
+        tooltip="<img src='Image/tourEiffel.jpg' alt='Tour Eiffel' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
+    
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("index.html")
+
+
+def notre_dame():
+    custom_icon = folium.CustomIcon('Image/Notre-Dame.png', icon_size=(40, 50), icon_anchor=(15, 47))
+
+    #Partie html
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>Notre-Dame de Paris</h4>
+        <img src='Image/Notre-Dame.jpg' alt='Notre-Dame' width='200'>
+        <p>
+            Un jour, à Paris, un architecte a dit : 'Je veux construire la cathédrale la plus cool du monde !'
+            Alors, ils ont commencé à empiler des pierres et à sculpter des gargouilles effrayantes.
+            Mais après des siècles de construction, tout le monde a oublié où ils avaient mis la clé du cadenas.
+            Finalement, ils ont trouvé la clé, ont ouvert les portes, et tout le monde a dit : 'Waouh, c'est vraiment grandiose !'
+            Et voilà comment Notre-Dame est devenue la rockstar des cathédrales françaises !
+        </p>
+    </div>
+    """
+
+    folium.Marker(
+         location=[48.8529, 2.3499],
+        tooltip="<img src='Image/Notre-Dame.jpg' alt='Notre-Dame' width='150'>",
+        popup=popup_content,
+        icon=custom_icon,
+        
+    ).add_to(m)
+
+
+    m.save("index.html")
+    
+tourEiffel()
+notre_dame()
