@@ -1,5 +1,6 @@
 import folium
 
+
 # Coordonnées de Paris
 paris_coords = (48.8566, 2.3522)
 
@@ -15,7 +16,7 @@ def tourEiffel():
     popup_content = """
     <div style='width: 250px;'>
         <h4>La Tour Eiffel</h4>
-        <img src='Image/tourEiffel.jpg' alt='Tour Eiffel' width='200'>
+        <img src='Image/tourEiffel (3).png' alt='Tour Eiffel' width='200'>
         <p>
             Ah, la Tour Eiffel, le grand géant de fer qui a commencé comme un projet fou d'exposition universelle !
             Imaginez un architecte, Gustave Eiffel, en train de dire : "Hé les gars, construisons une immense structure en fer à Paris, ça va être génial !"
@@ -24,7 +25,7 @@ def tourEiffel():
     </div>
     <!-- Bouton pour la lecture audio et balise audio -->
     <button onclick="playAudio()">Lecture audio</button>
-    <audio id="audioPlayer" src="son.mp3"></audio>
+    <audio id="audioPlayer" src="SON/Tour-Eiffel-normal.mp3"></audio>
     """
     # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
     script = """
@@ -50,7 +51,7 @@ def tourEiffel():
     m.get_root().html.add_child(folium.Element(script))
 
     # Enregistrement de la carte dans un fichier HTML
-    m.save("index.html")
+    m.save("carte.html")
 
 
 def notre_dame():
@@ -80,7 +81,318 @@ def notre_dame():
     ).add_to(m)
 
 
-    m.save("index.html")
+    m.save("carte.html")
+
+
+def arc_triomphe():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/arc_triomphe.png', icon_size=(40, 50), icon_anchor=(20, 45))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/arc-triomphe.webp' alt='arc' width='240'>
+        <p>
+            Imagine un énorme arc de triomphe à Paris. 
+            C’est comme un trophée géant pour dire "On est les meilleurs !"
+            Il célèbre les victoires de la France et montre à tout le monde à quel point ils sont balèzes.*
+            Il y a des noms de batailles partout dessus, des statues qui crient "Regardez-nous !" et même une flamme éternelle pour honorer les soldats inconnus. 
+            En gros, c'est un énorme rappel en pierre pour dire "La France, championne du monde !" Voilà, en gros !
+        </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="chemin du dosier"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.8738, 2.295],
+        tooltip="<img src='Image/arc-triomphe.webp' alt='arc' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
     
-tourEiffel()
-notre_dame()
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("carte.html")
+
+def Louvre():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/louvre.png', icon_size=(40, 50), icon_anchor=(20, 45))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/louvre (2).jpg' alt='louvre' width='250'>
+        <p> Description </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="chemin du dosier"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.861013, 2.335858],
+        tooltip="<img src='Image/louvre.jpg' alt='louvre' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
+    
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("carte.html")
+
+def Opera():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/opera.png', icon_size=(40, 50), icon_anchor=(20, 45))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/opera.jpg' alt='opera' width='250'>
+        <p> Description </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="chemin du dosier"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.871467, 2.33196],
+        tooltip="<img src='Image/operagarnier.jpg' alt='opera' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
+    
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("carte.html")
+
+def defense():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/defense.png', icon_size=(40, 50), icon_anchor=(30, 55))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/la def.webp' alt='defense' width='250'>
+        <p> Description </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="chemin du dosier"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.892598, 2.236112],
+        tooltip="<img src='Image/defense.jpg' alt='defense' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
+    
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("carte.html")
+
+def invalide():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/invalide (2).png', icon_size=(40, 50), icon_anchor=(18, 55))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/hotel-des-invalides.jpg' alt='invalide' width='270'>
+        <p> Description </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="chemin du dosier"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.854904, 2.312461],
+        tooltip="<img src='Image/invalide.png' alt='invalide' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
+    
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("carte.html")
+
+
+def sacre_coeur():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/sacre.png', icon_size=(40, 50), icon_anchor=(18, 55))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/sacre.webp' alt='sacre_coeur' width='200'>
+        <p> Description </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="chemin du dosier"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.886452, 2.343121],
+        tooltip="<img src='Image/sacre_coeur.webp' alt='sacre_coeur' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
+    
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("carte.html")
+
+def pantheon():
+    # Définition de l'icône personnalisée pour le marqueur
+    custom_icon = folium.CustomIcon('Image/pant.png', icon_size=(40, 50), icon_anchor=(18, 45))
+
+    # Contenu HTML du popup
+    popup_content = """
+    <div style='width: 250px;'>
+        <h4>La Tour Eiffel</h4>
+        <img src='Image/pantheon.png' alt='sacre_coeur' width='200'>
+        <p> Description </p>
+    </div>
+    <!-- Bouton pour la lecture audio et balise audio -->
+    <button onclick="playAudio()">Lecture audio</button>
+    <audio id="audioPlayer" src="chemin du dosier"></audio>
+    """
+    # Script JavaScript pour lire le fichier audio lorsque le bouton est cliqué
+    script = """
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("audioPlayer");
+            audio.play();
+        }
+    </script>
+    """
+
+    # Création du marqueur avec le popup et l'icône personnalisée
+    folium.Marker(
+        location=[48.8463, 2.3461],
+        tooltip="<img src='Image/pantheon.jpg' alt='sacre_coeur' width='200'>",
+        popup=folium.Popup(popup_content, max_width=265),
+        icon=custom_icon,
+    ).add_to(m)
+
+    
+    
+    # Ajout du script JavaScript à la carte pour la lecture audio
+    m.get_root().html.add_child(folium.Element(script))
+
+    # Enregistrement de la carte dans un fichier HTML
+    m.save("carte.html")
+
+
+
+
+    
+def lancement():
+    tourEiffel()
+    notre_dame()
+    arc_triomphe()
+    Louvre()
+    Opera()
+    defense()
+    invalide()
+    sacre_coeur()
+    pantheon()
+lancement()
+
+
+
